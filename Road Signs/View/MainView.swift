@@ -13,7 +13,6 @@ class MainView: UIView {
     let speedLimitImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "60")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

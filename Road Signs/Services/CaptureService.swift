@@ -33,7 +33,7 @@ class CaptureService {
         self.videoDevice = videoDevice
         
         session.beginConfiguration()
-        session.sessionPreset = .vga640x480 // Model image size is smaller.
+        session.sessionPreset = .hd4K3840x2160 // Model image size is smaller.
         
         // Add a video input
         guard session.canAddInput(deviceInput) else {

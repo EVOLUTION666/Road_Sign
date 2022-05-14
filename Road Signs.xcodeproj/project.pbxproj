@@ -20,6 +20,7 @@
 		55270E2728186E5300DB9658 /* SignRecognizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55270E2428186E5300DB9658 /* SignRecognizerManager.swift */; };
 		55270E2D281C6BC000DB9658 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55270E2C281C6BC000DB9658 /* Extensions.swift */; };
 		55270E31281C73CD00DB9658 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55270E30281C73CD00DB9658 /* MainView.swift */; };
+		55B4765A2830461000CB5B6D /* SpeakerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B476592830461000CB5B6D /* SpeakerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		55270E2428186E5300DB9658 /* SignRecognizerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignRecognizerManager.swift; sourceTree = "<group>"; };
 		55270E2C281C6BC000DB9658 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		55270E30281C73CD00DB9658 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		55B476592830461000CB5B6D /* SpeakerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				55270E2328186E5300DB9658 /* CaptureService.swift */,
 				55270E1E28185E0100DB9658 /* ServiceLocation.swift */,
 				55270E2228186E5200DB9658 /* ServiceRecognizer.swift */,
+				55B476592830461000CB5B6D /* SpeakerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				55270E21281864E500DB9658 /* OCRManager.swift in Sources */,
 				3BE572DB2497668200426342 /* Model.mlmodel in Sources */,
 				55270E2728186E5300DB9658 /* SignRecognizerManager.swift in Sources */,
+				55B4765A2830461000CB5B6D /* SpeakerService.swift in Sources */,
 				3BEE843A242B6406001A9AF9 /* ViewController.swift in Sources */,
 				55270E1F28185E0100DB9658 /* ServiceLocation.swift in Sources */,
 				55270E2D281C6BC000DB9658 /* Extensions.swift in Sources */,
