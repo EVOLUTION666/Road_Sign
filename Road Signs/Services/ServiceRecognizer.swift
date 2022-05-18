@@ -9,7 +9,7 @@ class ServiceRecognizer {
     func setupVision(completion: @escaping ([VNObservation]?) -> ()) {
         // Setup Vision parts
         
-        guard let modelURL = Bundle.main.url(forResource: "Model", withExtension: "mlmodelc") else {
+        guard let modelURL = Bundle.main.url(forResource: "RoadSignML", withExtension: "mlmodelc") else {
             completion(nil)
             return
         }
@@ -28,6 +28,4 @@ class ServiceRecognizer {
             print("Model loading went wrong: \(error)")
         }
     }
-    
-    
 }

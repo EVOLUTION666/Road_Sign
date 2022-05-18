@@ -5,13 +5,6 @@ import AVFoundation
 import VideoToolbox
 import CoreLocation
 
-enum RoadSign: String {
-    case crosswalk
-    case speedlimit
-    case stop
-    case trafficlight
-}
-
 class ViewController: UIViewController {
     
     let signRecongnizerManager = SignRecognizerManager(serviceRecognizer: .init(), captureService: .init(videoDataOutput: .init()))
@@ -24,10 +17,12 @@ class ViewController: UIViewController {
     
     var recognizedSign: RoadSign?
     
+    var screamFlag = false
+    
     var lastRecognizedSpeedLimitTimeOfRecognition = Date()
     var roadSignsRecognizedDuringLastHalfOfSecond = [(String, Date)]()
     var currentSpeed: Int = 0
-    var currentSpeedLimit: Int = 60
+    var currentSpeedLimit: Int = 0
     private var requests = [VNRequest]()
     var image: UIImage?
     var photoOutput = AVCapturePhotoOutput()
@@ -59,7 +54,6 @@ class ViewController: UIViewController {
         print(UIScreen.main.bounds.size)
         print(view.frame.size)
         view.layer.insertSublayer(previewLayer, at: 0)
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -146,7 +140,7 @@ extension ViewController {
                 continue
             }
             let topLabelObservation = objectObservation.labels[0]
-            if topLabelObservation.confidence >= 0.95 {
+            if topLabelObservation.confidence >= 0.9 {
                 
                 if objectObservation.boundingBox.width > 0.05 && objectObservation.boundingBox.height > 0.05 {
                     let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
@@ -180,6 +174,7 @@ extension ViewController {
                                     DispatchQueue.main.async {
                                         self.mainView.speedLimitImageView.image = imageFromAssets
                                         self.checkCurrentSpeedAndSpeedLimit()
+                                        self.screamFlag = true
                                     }
                                 }
                             }
@@ -197,10 +192,14 @@ extension ViewController {
                             }
                         case .speedlimit:
                             break
-                        case .stop:
-                            break
-                        case .trafficlight:
-                            break
+                        case .giveWay:
+                            if recognizedSign != sign {
+                                SpeakerService.shared.speak(phrase: .giveWay)
+                            }
+                        case .mainRoad:
+                            if recognizedSign != sign {
+                                SpeakerService.shared.speak(phrase: .mainRoad)
+                            }
                         }
                         self.recognizedSign = sign
                     }
@@ -256,8 +255,9 @@ extension ViewController: ServiceLocationDelegate {
         self.mainView.currentSpeedLabel.text = String(Int(speed))
         self.currentSpeed = Int(speed)
         self.checkCurrentSpeedAndSpeedLimit()
-        if currentSpeed > currentSpeedLimit {
+        if currentSpeed > currentSpeedLimit && currentSpeedLimit != 0 && screamFlag {
             SpeakerService.shared.speak(phrase: .warningSpeed)
+            screamFlag = false
         }
     }
 }

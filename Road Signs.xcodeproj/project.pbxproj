@@ -21,6 +21,8 @@
 		55270E2D281C6BC000DB9658 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55270E2C281C6BC000DB9658 /* Extensions.swift */; };
 		55270E31281C73CD00DB9658 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55270E30281C73CD00DB9658 /* MainView.swift */; };
 		55B4765A2830461000CB5B6D /* SpeakerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B476592830461000CB5B6D /* SpeakerService.swift */; };
+		55B4765C2833DE3700CB5B6D /* RoadSignML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55B4765B2833DE3700CB5B6D /* RoadSignML.mlmodel */; };
+		55B4765E283561B600CB5B6D /* RoadSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4765D283561B600CB5B6D /* RoadSign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		55270E2C281C6BC000DB9658 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		55270E30281C73CD00DB9658 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		55B476592830461000CB5B6D /* SpeakerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerService.swift; sourceTree = "<group>"; };
+		55B4765B2833DE3700CB5B6D /* RoadSignML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RoadSignML.mlmodel; sourceTree = "<group>"; };
+		55B4765D283561B600CB5B6D /* RoadSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadSign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,9 @@
 		55270E34281C7EBB00DB9658 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55B4765B2833DE3700CB5B6D /* RoadSignML.mlmodel */,
 				3BE572DA2497668200426342 /* Model.mlmodel */,
+				55B4765D283561B600CB5B6D /* RoadSign.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 			files = (
 				55270E21281864E500DB9658 /* OCRManager.swift in Sources */,
 				3BE572DB2497668200426342 /* Model.mlmodel in Sources */,
+				55B4765C2833DE3700CB5B6D /* RoadSignML.mlmodel in Sources */,
+				55B4765E283561B600CB5B6D /* RoadSign.swift in Sources */,
 				55270E2728186E5300DB9658 /* SignRecognizerManager.swift in Sources */,
 				55B4765A2830461000CB5B6D /* SpeakerService.swift in Sources */,
 				3BEE843A242B6406001A9AF9 /* ViewController.swift in Sources */,
